@@ -107,3 +107,40 @@
 - 注意：位置索引是从0开始的
 
 - `trim()`方法删除末尾空格
+
+### Chap4 栈
+
+- 栈是一种特殊的列表，只能通过一端访问其元素，这一端称为栈顶
+
+- 后入先出，先入后出
+
+- 入栈：`push()`
+
+- 出栈：`pop()`
+
+- `peek()`方法用于预览栈顶元素，而不删除
+
+- 栈类构造函数
+
+- ```javascript
+  function Stack() {
+      this.dataStore = [];
+      //将栈顶标识为数组的第一个元素
+      this.top = 0;
+      this.push = push;
+      this.pop = pop;
+      this.peek = peek;
+      this.clear = clear;
+      this.length = length;
+  }
+  ```
+
+- 栈的应用
+
+  - 数制间的转换
+  - 回文：从前往后写跟从后往前写一样，栈可以用来判断是否是回文
+  - 可以模拟递归过程
+
+### Chap5 队列
+
+- 队列是一种列表，先进先出
