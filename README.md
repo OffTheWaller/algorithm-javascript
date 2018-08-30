@@ -144,3 +144,49 @@
 ### Chap5 队列
 
 - 队列是一种列表，先进先出
+
+- ```javascript
+  function Queue() {
+      this.dataStore = [];
+      this.enqueue = enqueue;
+      this.dequeue = dequeue;
+      this.front = front;
+      this.back = back;
+      this.toString = toString;
+      this.empty = empty;
+  }
+  ```
+
+- 基数排序问题
+
+- 优先队列：从队列中删除元素时先删除优先级最高的元素
+
+### Chap6 链表
+
+- js中的数组被实现成了对象，与java相比效率低
+
+- 数组元素靠他们的位置进行引用，链表元素靠相互之间的关系进行引用
+
+- 链表的优点：增加和删除快；数组增加和删除慢
+
+- 链表中的节点包含两个属性：一个是本身存储的元素，一个是指向下个元素的链接
+
+- ```javascript
+  //Node类表示节点
+  function Node(ele) {
+      this.ele = ele;  //存节点元素
+      this.next = null;  //存链接
+  }
+  //LinkedList类提供操作的方法
+  function LList() {
+      this.head = new Node('head');  //head节点
+      this.find = find;
+      this.insert = insert;
+      this.remove = remove;
+      this.display = display;
+  }
+  ```
+
+- 双向链表
+
+  - 增加一个previous属性，存储指向前驱节点的链接
