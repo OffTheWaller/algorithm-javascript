@@ -190,3 +190,54 @@
 - 双向链表
 
   - 增加一个previous属性，存储指向前驱节点的链接
+
+- 循环链表：链表的尾节点指向头节点
+
+### Chap7 字典
+
+- 键值对的形式存储数据的数据结构
+- js有个内置函数delete，同时删除掉键和与其关联的值
+- Array中如果键的值不是数字类型的索引，如果是字符串类型的键，这时候length属性失效
+- `Object.keys`方法可以获取Array中所有的key值
+
+### Chap8 散列
+
+- 散列的数据结构叫做散列表
+- 优点：插入，删除，取用快，查找慢
+- 使用散列函数将键映射为唯一的数组索引，如果映射时将两个键映射为了同一个索引值，叫做`碰撞`
+- HashTable类
+- 选择散列函数非常重要
+- `charCodeAt()`可以获取到单个字符的ACSII码值
+- 碰撞处理
+  - 开链法
+  - 线性探测法
+
+### Chap9 集合
+
+- 集合（set）是一种包含不同元素的数据结构
+
+- 集合中的元素称为成员
+
+- 集合中的成员是无序的，集合中不允许有重复元素
+
+- 对集合的操作：并集、交集、补集
+
+- 定义Set类
+
+- Set类中的add方法需要判断元素是否存在
+
+- ```javascript
+  function add(data) {
+      if (this.dataStore.indexOf(data) < 0) {
+          this.dataStore.push(data);
+          return true;
+      } else {
+          return false;
+      }
+  }
+  ```
+
+- 定义`union()`方法并集，`intersect()`求交集，`subset()`判断是否为子集，`difference()`方法求补集
+
+### Chap10 二叉树和二叉查找树
+
