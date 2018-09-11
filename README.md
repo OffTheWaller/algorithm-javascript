@@ -276,6 +276,24 @@
 
 - 冒泡排序
 
+- ```javascript
+  //比较相邻两元素，如果前一个比后一个大，就交换位置
+  function bubbleSort(arr) {
+      for (var i=0; i<arr.length -1; i++) {
+          for (var j=0; j<arr.length - i -1; j++) {
+              if (arr[j] > arr[j+1]) {
+                  var temp = arr[j];
+                  arr[j] = arr[j+1];
+                  arr[j+1] = temp;
+              }
+          }
+      }
+  }
+  var arr = [2,6,3,8,4,9,33,56,11];
+  bubbleSort(arr);
+  console.log(arr);
+  ```
+
 - 选择排序
 
 - 插入排序
@@ -286,8 +304,45 @@
 
 - 快速排序
 
+```javascript
+/*
+快速排序：利用递归的思想
+例如数组a =[2 4 1 8 9 7 3]  
+思路：1.找一个基准数，例如数组第一个数2，比2小的放左边，比2大的放右边，此时2的定位就结束
+    2.定义指针i,j，先让j从右边开始--，找小于2的数，找到发现为1，也就是a[2]停下来
+    3.让i++，从左往右找大于2的数，找到发现为4，也就是a[1]，停下来
+    4.交换这两个数，即a[2]和a[1]交换，得到新数组[2 1 4 8 9 7 3]
+    5.让j继续--，刚走了一步发现在a[1]这个位置，i与j相遇了，这个相遇的位置就是基准数2的定位
+    6.所以此时交换a[0]和a[1]，此时新数组为[1 2 4 8 9 7 3]，此时基准数2归位
+    7.基准数2归位后将数组分为左右两边，[1] [4 8 9 7 3]，分别对左右两个数组重复之前的操作，直到不能一直分下去，排序结束
+*/
+
+//以上不用新数组的实现方法，直接对原数组进行排序，代码实现有待学习
+
+/**
+ * 还有一种是借助创建两个新数组，分别用来存比基准值大的和比基准值小的数据
+ * 代码实现起来简单
+ */
+function quickSort(list) {
+    if (list.length == 0) {
+        return [];
+    }
+    var lesser = [];  //放小于基准数的数
+    var greater = []; //放大于基准数的数
+    var pivot = list[0]; //基准数
+    for (var i=1; i<list.length; i++) {
+        if (list[i] < pivot) {
+            lesser.push(list[i]);
+        } else {
+            greater.push(list[i]);
+        }
+    }
+    return quickSort(lesser).concat(pivot, quickSort(greater));
+}
+var arr = [12,32,4,78,56,43,21];
+console.log(quickSort(arr));
+```
+
 - 希尔排序
-
 - 归并排序
-
 - 堆排序
