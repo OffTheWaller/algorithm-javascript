@@ -424,3 +424,42 @@ console.log(quickSort(arr));
 - 希尔排序
 - 归并排序
 - 堆排序
+
+### 检索算法（查找算法）
+
+在列表中查找数据有两种方式：顺序查找和二分查找
+
+顺序查找适用于元素随机排列的列表，二分查找适用于元素已排序的列表
+
+- 顺序查找
+
+```javascript
+//顺序查找思路：挨个比较待查找元素，找到返回true
+function seqSearch(arr, data) {
+    for (var i=0; i<arr.length; i++) {
+        if (arr[i] = data) {
+            return true;
+        }
+    }
+    return false;
+}
+```
+
+注意：上面这个函数的执行速度比内置的Array.indexof()方法慢
+
+- 查找数组中的最小值
+
+```javascript
+//查找数组中的最小值
+function findMin (arr) {
+    var min = arr[0];
+    for (var i=1; i<arr.length; i++) {
+        if (arr[i] < min) {
+            min = arr[i];
+        }
+    }
+    return min;
+}
+```
+
+- 二分查找
